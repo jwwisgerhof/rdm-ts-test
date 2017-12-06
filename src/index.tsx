@@ -2,8 +2,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "mobx-react";
 
-import App from "./App";
 import CommonStore from "./stores/CommonStore";
+import App from "./components/App";
 
 const appState = new CommonStore();
 

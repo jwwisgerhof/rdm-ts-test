@@ -1,8 +1,7 @@
 import * as React from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 
-import Users from "./components/Users";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./AsyncDashboard";
 
 class App extends React.PureComponent {
   render() {
@@ -11,11 +10,9 @@ class App extends React.PureComponent {
         <div>
           <div>
             <Link to="/">Dashboard</Link> |
-            <Link to="/users">User list</Link>
           </div>
           <div>
-            <Route exact path="/" component={Dashboard} />
-            <Route exact path="/users" component={Users} />
+            <Route exact={true} path="/" component={Dashboard} />
           </div>
         </div>
       </Router>

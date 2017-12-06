@@ -3,7 +3,8 @@
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",
-    "lib": ["es6", "dom"],
+    "lib": ["es2017", "dom"],
+    "types": ["node", "jest"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
@@ -16,7 +17,8 @@
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "typeRoots": ["./node_modules/@types"]
   },
   "exclude": [
     "node_modules",
