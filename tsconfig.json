@@ -4,7 +4,7 @@
     "module": "esnext",
     "target": "es5",
     "lib": ["es2017", "dom"],
-    "types": ["node", "jest"],
+    "types": ["node", "jest", "webpack", "webpack-env"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",

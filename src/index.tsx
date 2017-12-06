@@ -1,15 +1,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Provider } from "mobx-react";
 
-import CommonStore from "./stores/CommonStore";
-import App from "./components/App";
+import Root from "./components/Root";
 
-const appState = new CommonStore();
+ReactDOM.render(<Root />, document.getElementById("root") as HTMLElement);
 
-ReactDOM.render(
-  <Provider appState={appState}>
-    <App />
-  </Provider>,
-  document.getElementById("root") as HTMLElement
-);
+if (module.hot) {
+  module.hot.accept("./components/Root", () => {
+    const NextApp = require("./components/Root").default;
+    ReactDOM.render(<NextApp />, document.getElementById(
+      "root"
+    ) as HTMLElement);
+  });
+}
