@@ -34,7 +34,7 @@ module.exports = {
     polyfills: require.resolve("./polyfills"),
     hot: require.resolve("react-dev-utils/webpackHotDevClient"),
     main: paths.appIndexJs,
-    vendor: ["react", "react-dom", "react-router-dom", "mobx-react"]
+    vendor: ["react", "react-dom", "react-router-dom", "mobx-react", "jss"]
   },
   output: {
     // Next line is not used in dev but WebpackDevServer crashes without it:

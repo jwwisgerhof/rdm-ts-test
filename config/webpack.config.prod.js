@@ -63,7 +63,7 @@ module.exports = {
   entry: {
     polyfills: require.resolve("./polyfills"),
     main: paths.appIndexJs,
-    vendor: ["react", "react-dom", "react-router-dom", "mobx-react"]
+    vendor: ["react", "react-dom", "react-router-dom", "mobx-react", "jss"]
   },
   output: {
     // The build folder.
@@ -278,7 +278,8 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       minChunks: Infinity
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
