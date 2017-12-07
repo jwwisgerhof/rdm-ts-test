@@ -7,13 +7,14 @@ import IconButton from "material-ui/IconButton";
 import MenuIcon from "material-ui-icons/Menu";
 import Typography from "material-ui/Typography";
 import { StyleRules, Theme, WithStyles, withStyles } from "material-ui/styles";
+import { Provider } from "mobx-react";
 
 import { CommonStoreInterface } from "../../stores/CommonStore";
 
-// TEMP
 import Drawer from "../../common/MenuDrawer";
 import routes from "./routes";
 import menuItems from "./menuItems";
+import recordStore from "./stores/RecordStore";
 
 const drawerWidth = 320;
 const styles = (theme: Theme): StyleRules => ({
@@ -93,16 +94,18 @@ class App extends React.Component<
           menuItems={menuItems(commonStore.account)}
           handleMenuClose={this.handleDrawerToggle}
         />
-        <main style={{ backgroundColor: "red" }} className={classes.content}>
-          {routes.map(item => (
-            <Route
-              key={item.path}
-              component={item.component}
-              path={item.path}
-              exact={item.exact}
-            />
-          ))}
-        </main>
+        <Provider recordStore={recordStore}>
+          <main className={classes.content}>
+            {routes.map(item => (
+              <Route
+                key={item.path}
+                component={item.component}
+                path={item.path}
+                exact={item.exact}
+              />
+            ))}
+          </main>
+        </Provider>
       </div>
     );
   }

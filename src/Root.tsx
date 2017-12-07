@@ -10,7 +10,7 @@ import CommonStore from "./stores/CommonStore";
 import ApplicationLoader from "./common/ApplicationLoader";
 
 // Modules
-import App from "./modules/App/App";
+import App from "./modules/App";
 
 const commonStore = new CommonStore();
 

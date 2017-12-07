@@ -1,6 +1,6 @@
 import { makeRequest } from "../config/fetch";
-import Account from "../interfaces/Account";
+import User from "../interfaces/User";
 
-export const getAccount = (): Promise<Account> => {
-  return makeRequest<Account>("GET", "auth/account");
+export const getAccount = (): Promise<User> => {
+  return makeRequest<User>("GET", "auth/account");
 };

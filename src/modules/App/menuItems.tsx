@@ -1,8 +1,8 @@
 import { apiBase } from "../../config/variables";
 import MenuItem from "../../interfaces/MenuItem";
-import Account from "../../interfaces/Account";
+import User from "../../interfaces/User";
 
-const appMenuItems = (account: Account): MenuItem[] => [
+const appMenuItems = (account: User): MenuItem[] => [
   {
     primaryText: "Dashboard",
     secondaryText: account.mail,

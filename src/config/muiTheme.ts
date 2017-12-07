@@ -24,7 +24,7 @@ export const layoutHelpers = {
   card: {
     maxWidth: "90%",
     width: 1200,
-    position: "relative",
+    position: "relative" as "relative",
     margin: "0 auto"
   },
   page: {

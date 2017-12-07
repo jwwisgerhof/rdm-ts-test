@@ -17,6 +17,9 @@ const styles = (theme: Theme) => ({
     position: "relative" as "relative",
     height: "100%"
   },
+  drawerContainer: {
+    display: "flex"
+  },
   logoWrapper: {
     backgroundColor: theme.palette.primary["500"],
     height: "64px",
@@ -43,7 +46,13 @@ interface Props {
 
 class MenuDrawer extends React.PureComponent<
   Props &
-    WithStyles<"drawerPaper" | "logoWrapper" | "logo" | "closeMenuIcon"> &
+    WithStyles<
+      | "drawerPaper"
+      | "logoWrapper"
+      | "logo"
+      | "closeMenuIcon"
+      | "drawerContainer"
+    > &
     RouteComponentProps<{}>
 > {
   onNavigate = (to: string) => {
@@ -91,7 +100,7 @@ class MenuDrawer extends React.PureComponent<
     );
 
     return (
-      <div>
+      <div className={classes.drawerContainer}>
         <Hidden only={["md", "lg", "xl"]}>
           <Drawer
             type="temporary"

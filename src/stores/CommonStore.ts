@@ -1,17 +1,17 @@
 import { observable, action } from "mobx";
 
-import Account from "../interfaces/Account";
+import User from "../interfaces/User";
 import { getAccount } from "../repositories/account";
 
 export interface CommonStoreInterface {
   loading: boolean;
-  account: Account;
+  account: User;
   loadAccount: (userId: number) => void;
 }
 
 export default class CommonStore implements CommonStoreInterface {
   @observable public loading: boolean = true;
-  @observable public account: Account;
+  @observable public account: User;
 
   constructor() {
     this.loadAccount();
