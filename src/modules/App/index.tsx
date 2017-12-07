@@ -1,7 +1,7 @@
 const Loadable = require("react-loadable");
-import Loading from "./Loading";
+import Loading from "../../common/Loading";
 
 export default Loadable({
-  loader: () => import("./Dashboard"),
+  loader: () => import("./App"),
   loading: Loading
 });

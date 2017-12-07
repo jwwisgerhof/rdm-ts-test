@@ -1,10 +1,4 @@
-// Api URL
-let apiUrl = "http://dev-rdm.uq.edu.au:8060/";
-if (process.env.REACT_APP_ENVIRONMENT === "production") {
-  apiUrl = "https://rdm.uq.edu.au/api/v1/";
-} else if (process.env.REACT_APP_ENVIRONMENT === "staging") {
-  apiUrl = "https://rdm.uq.edu.au/api/staging/";
-}
+import { apiBase } from "./variables";
 
 export function makeRequest<T>(
   method: string,
@@ -14,7 +8,7 @@ export function makeRequest<T>(
   return new Promise<T>(
     async (resolve: (val: any) => void, reject: (val: any) => void) => {
       try {
-        const response = await fetch(apiUrl + url, {
+        const response = await fetch(apiBase + url, {
           credentials: "same-origin",
           method,
           body: data
